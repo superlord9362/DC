@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dc",
+  "name": "DungeonCraft: Create Your Own Fantasy",
+  "description": "Explore the world with new monsters, weapons, and treasures.",
+  "version": "1.0",
+  "mcversion": "1.12",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["superlord9362"],
+  "credits": "LordofLustria for creating a couple textures, and superlord9362 for models.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
