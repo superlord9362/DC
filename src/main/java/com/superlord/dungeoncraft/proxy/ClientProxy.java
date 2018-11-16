@@ -1,6 +1,7 @@
 package com.superlord.dungeoncraft.proxy;
 
 import com.superlord.dungeoncraft.entities.EntityCentaur;
+import com.superlord.dungeoncraft.entities.EntityFriendlySkeleton;
 import com.superlord.dungeoncraft.entities.EntityGoblin;
 import com.superlord.dungeoncraft.entities.EntityKobold;
 import com.superlord.dungeoncraft.entities.EntityLamia;
@@ -16,6 +17,7 @@ import com.superlord.dungeoncraft.entities.renderers.OgreRenderer;
 import com.superlord.dungeoncraft.entities.renderers.OrcRenderer;
 import com.superlord.dungeoncraft.entities.renderers.SahuaginRenderer;
 import com.superlord.dungeoncraft.entities.renderers.SkeletonRenderer;
+import com.superlord.dungeoncraft.entities.renderers.SkeletonRenderer2;
 import com.superlord.dungeoncraft.world.gen.WorldGenCustomStructures;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -45,6 +47,7 @@ public void preInit(FMLPreInitializationEvent event) {
 	RenderingRegistry.registerEntityRenderingHandler(EntitySkeleton1.class, SkeletonRenderer.FACTORY);
 	RenderingRegistry.registerEntityRenderingHandler(EntitySahuagin.class, SahuaginRenderer.FACTORY);
 	RenderingRegistry.registerEntityRenderingHandler(EntityCentaur.class, CentaurRenderer.FACTORY);
+	RenderingRegistry.registerEntityRenderingHandler(EntityFriendlySkeleton.class, SkeletonRenderer2.FACTORY);
 	GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
 }
 

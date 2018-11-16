@@ -2,6 +2,7 @@ package com.superlord.dungeoncraft.util.handlers;
 
 import com.superlord.dungeoncraft.Main;
 import com.superlord.dungeoncraft.entities.EntityCentaur;
+import com.superlord.dungeoncraft.entities.EntityFriendlySkeleton;
 import com.superlord.dungeoncraft.entities.EntityGoblin;
 import com.superlord.dungeoncraft.entities.EntityKobold;
 import com.superlord.dungeoncraft.entities.EntityLamia;
@@ -63,6 +64,7 @@ public class RegistryHandler {
 		EntityRegistry.addSpawn(EntitySahuagin.class, 40, 1, 3, EnumCreatureType.CREATURE, Biomes.SWAMPLAND);
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "centaur"), EntityCentaur.class, "centaur", entityId++, Main.instance, 64, 3, true, 0x7F6A00, 0x000000);
 		EntityRegistry.addSpawn(EntityCentaur.class, 60, 5, 10, EnumCreatureType.CREATURE, Biomes.FOREST, Biomes.ROOFED_FOREST, Biomes.BIRCH_FOREST, Biomes.FOREST_HILLS, Biomes.BIRCH_FOREST_HILLS);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "skeleton2"), EntityFriendlySkeleton.class, "skeleton2", entityId++, Main.instance, 64, 3, true, 0x808080, 0x000000);
 	}
 	
 }

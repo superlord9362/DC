@@ -11,22 +11,29 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntityOgre extends EntityMob
+public class EntityFriendlySkeleton extends EntityMob
 {
 
-    public EntityOgre(World worldIn) {
+    public EntityFriendlySkeleton(World worldIn) {
         super(worldIn);
-        this.setSize(1.0F, 2.95F);
+        this.setSize(1.3F, 2.55F);
     }
 
      protected void initEntityAI()
@@ -42,10 +49,16 @@ public class EntityOgre extends EntityMob
 
         protected void applyEntityAI()
         {
-            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-            this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
-            this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
-            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityGoblin.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityOrc.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntitySahuagin.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZombie.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntitySkeleton.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityCreeper.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityOgre.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityKobold.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityLamia.class, true));
 
         }
         
@@ -54,14 +67,29 @@ public class EntityOgre extends EntityMob
             super.applyEntityAttributes();
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
-            this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(60.0D);
-            
+            this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
         }
         
         protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
         {
             this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_SPEAR));
         }
+        
+        protected SoundEvent getAmbientSound()
+        {
+            return SoundEvents.ENTITY_SKELETON_AMBIENT;
+        }
+
+        protected SoundEvent getHurtSound(DamageSource p_184601_1_)
+        {
+            return SoundEvents.ENTITY_SKELETON_HURT;
+        }
+
+        protected SoundEvent getDeathSound()
+        {
+            return SoundEvents.ENTITY_SKELETON_DEATH;
+        }
+        
  
 }
