@@ -33,7 +33,7 @@ public class EntityFriendlySkeleton extends EntityMob
 
     public EntityFriendlySkeleton(World worldIn) {
         super(worldIn);
-        this.setSize(1.3F, 2.55F);
+        this.setSize(0.6F, 1.95F);
     }
 
      protected void initEntityAI()
