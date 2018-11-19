@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.superlord.dungeoncraft.items.ItemBase;
+import com.superlord.dungeoncraft.items.ItemFireScroll;
 import com.superlord.dungeoncraft.items.tools.ToolSpear;
 
 import net.minecraft.item.Item;
@@ -17,6 +18,7 @@ public class ModItems {
 	
 	public static final Item GOLD_RING = new ItemBase("gold_ring");
 	public static final Item CHAIN = new ItemBase("chain");
+	public static final Item FIRE_SCROLL = new ItemFireScroll("fire_scroll");
 	//Materials
 	public static final ToolMaterial MATERIAL_IRON = EnumHelper.addToolMaterial("material_iron", 2, 250, 6.0F, 1.0F, 14);
 	public static final ToolMaterial MATERIAL_IRON_2 = EnumHelper.addToolMaterial("material_iron_2", 2, 250, 6.0F, 3.0F, 14);
