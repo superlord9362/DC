@@ -1,6 +1,7 @@
 package com.superlord.dungeoncraft.entities;
 
 import com.superlord.dungeoncraft.init.ModItems;
+import com.superlord.dungeoncraft.util.handlers.SoundsHandler;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
@@ -18,6 +19,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -46,6 +49,7 @@ public class EntityOgre extends EntityMob
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityDwarf.class, true));
 
         }
         
@@ -55,8 +59,23 @@ public class EntityOgre extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(60.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(59.0D);
             
+        }
+        
+        protected SoundEvent getAmbientSound()
+        {
+            return SoundsHandler.OGRE_IDLE;
+        }
+
+        protected SoundEvent getHurtSound(DamageSource p_184601_1_)
+        {
+            return SoundsHandler.OGRE_HURT;
+        }
+
+        protected SoundEvent getDeathSound()
+        {
+            return SoundsHandler.OGRE_HURT;
         }
         
         protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)

@@ -1,6 +1,7 @@
 package com.superlord.dungeoncraft.entities;
 
 import com.superlord.dungeoncraft.init.ModItems;
+import com.superlord.dungeoncraft.util.handlers.SoundsHandler;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
@@ -18,6 +19,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -54,12 +57,27 @@ public class EntityLamia extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(97.0D);
         }
         
         protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
         {
             this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_SPEAR));
+        }
+        
+        protected SoundEvent getAmbientSound()
+        {
+            return SoundsHandler.LAMIA_IDLE;
+        }
+
+        protected SoundEvent getHurtSound(DamageSource p_184601_1_)
+        {
+            return SoundsHandler.LAMIA_HURT;
+        }
+
+        protected SoundEvent getDeathSound()
+        {
+            return SoundsHandler.LAMIA_HURT;
         }
  
 }

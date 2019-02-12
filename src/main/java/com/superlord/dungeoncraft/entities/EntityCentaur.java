@@ -16,8 +16,11 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -51,8 +54,27 @@ public class EntityCentaur extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(45.0D);
         }
+        
+        protected SoundEvent getAmbientSound()
+        {
+            super.getAmbientSound();
+            return SoundEvents.ENTITY_HORSE_AMBIENT;
+        }
+
+        protected SoundEvent getDeathSound()
+        {
+            super.getDeathSound();
+            return SoundEvents.ENTITY_HORSE_DEATH;
+        }
+
+        protected SoundEvent getHurtSound(DamageSource p_184601_1_)
+        {
+            super.getHurtSound(p_184601_1_);
+            return SoundEvents.ENTITY_HORSE_HURT;
+        }
+
         
         protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
         {

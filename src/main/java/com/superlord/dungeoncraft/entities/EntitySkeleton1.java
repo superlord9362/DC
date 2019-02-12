@@ -69,6 +69,7 @@ public class EntitySkeleton1 extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
             this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(13.0D);
         }
         
         @Nullable

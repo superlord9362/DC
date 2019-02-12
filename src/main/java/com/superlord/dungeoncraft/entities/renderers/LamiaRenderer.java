@@ -24,46 +24,22 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class LamiaRenderer extends RenderLiving<EntityLamia> {
 
-
-
 	public static final Factory FACTORY = new Factory();
 
-	
-
 	public LamiaRenderer(RenderManager manager) {
-
 		super(manager, new Lamia(), 0.2F);
-
 	}
-
-
 
 	@Override
-
 	protected ResourceLocation getEntityTexture(EntityLamia entity) {
-
 		return new ResourceLocation(Reference.MOD_ID, "textures/entities/lamia.png");
-
 	}
-
 	
-
-	
-
 	public static class Factory implements IRenderFactory<EntityLamia> {
 
-
-
         @Override
-
         public Render<? super EntityLamia> createRenderFor(RenderManager manager) {
-
             return new LamiaRenderer(manager);
-
         }
-
-
-
     }
-
 }

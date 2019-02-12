@@ -34,10 +34,10 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntityOrc extends EntityMob
+public class EntityGnoll extends EntityMob
 {
 
-    public EntityOrc(World worldIn) {
+    public EntityGnoll(World worldIn) {
         super(worldIn);
         this.setSize(0.6F, 1.95F);
     }
@@ -59,22 +59,21 @@ public class EntityOrc extends EntityMob
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
-            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityDwarf.class, true));
         }
         
         protected SoundEvent getAmbientSound()
         {
-            return SoundsHandler.ORC_IDLE;
+            return SoundsHandler.GNOLL_IDLE;
         }
 
         protected SoundEvent getHurtSound(DamageSource p_184601_1_)
         {
-            return SoundsHandler.ORC_HURT;
+            return SoundsHandler.GNOLL_HURT;
         }
 
         protected SoundEvent getDeathSound()
         {
-            return SoundsHandler.ORC_DEATH;
+            return SoundsHandler.GNOLL_HURT;
         }
         
         protected void applyEntityAttributes()
@@ -83,7 +82,8 @@ public class EntityOrc extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(22.0D);
         }
         
         @Nullable
@@ -95,12 +95,12 @@ public class EntityOrc extends EntityMob
 
             if (livingdata == null)
             {
-                livingdata = new EntityOrc.GroupData(this.world.rand.nextFloat() < net.minecraftforge.common.ForgeModContainer.zombieBabyChance);
+                livingdata = new EntityGnoll.GroupData(this.world.rand.nextFloat() < net.minecraftforge.common.ForgeModContainer.zombieBabyChance);
             }
 
-            if (livingdata instanceof EntityOrc.GroupData)
+            if (livingdata instanceof EntityGnoll.GroupData)
             {
-                EntityOrc.GroupData entityzombie$groupdata = (EntityOrc.GroupData)livingdata;
+                EntityGnoll.GroupData entityzombie$groupdata = (EntityGnoll.GroupData)livingdata;
 
              
             }

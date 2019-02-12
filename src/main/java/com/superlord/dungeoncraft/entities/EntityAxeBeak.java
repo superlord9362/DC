@@ -23,12 +23,12 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntitySahuagin extends EntityMob
+public class EntityAxeBeak extends EntityMob
 {
 
-    public EntitySahuagin(World worldIn) {
+    public EntityAxeBeak(World worldIn) {
         super(worldIn);
-        this.setSize(0.6F, 1.95F);
+        this.setSize(0.6F, 2.0F);
     }
 
      protected void initEntityAI()
@@ -47,6 +47,7 @@ public class EntitySahuagin extends EntityMob
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityCentaur.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
         }
         
@@ -56,27 +57,22 @@ public class EntitySahuagin extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(22.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(19.0D);
         }
         
         protected SoundEvent getAmbientSound()
         {
-            return SoundsHandler.SAHUAGIN_IDLE;
+            return SoundsHandler.AXE_BEAK_IDLE;
         }
 
         protected SoundEvent getHurtSound(DamageSource p_184601_1_)
         {
-            return SoundsHandler.SAHUAGIN_HURT;
+            return SoundsHandler.AXE_BEAK_HURT;
         }
 
         protected SoundEvent getDeathSound()
         {
-            return SoundsHandler.SAHUAGIN_DEATH;
-        }
-        
-        protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
-        {
-            this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.GOLDEN_SWORD));
+            return SoundsHandler.AXE_BEAK_HURT;
         }
  
 }

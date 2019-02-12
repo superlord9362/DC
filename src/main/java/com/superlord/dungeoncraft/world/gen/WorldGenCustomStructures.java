@@ -20,53 +20,47 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGenCustomStructures implements IWorldGenerator {
 
-	public static final WorldGenStructure RUINEDKEEP = new WorldGenStructure("ruinedkeep");
-
+	private WorldGenStructure ruinedKeep;
+	private WorldGenStructure orcHut;
+	private WorldGenStructure dwarfForge;
+	private WorldGenStructure inn;
+	private WorldGenStructure tower;
+	
+	public WorldGenCustomStructures() {
+		this.ruinedKeep = new WorldGenStructure("ruinedkeep");
+		this.orcHut = new WorldGenStructure("orchut");
+		this.dwarfForge = new WorldGenStructure("dwarf_forge");
+		this.inn = new WorldGenStructure("inn");
+		this.tower = new WorldGenStructure("tower");
+	}
+	
 	@Override
-	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
+			IChunkProvider chunkProvider) {		
+		int blockX = chunkX * 16 + random.nextInt(16);
+		int blockZ = chunkZ * 16 + random.nextInt(16);
+		
 		switch(world.provider.getDimension()) {
-		case 1:
-			break;
 		case 0:
-			
-			generateStructure(RUINEDKEEP, world, random, chunkX, chunkZ, 25, Blocks.GRASS, Biomes.class);
-			
+			runGenerator(this.ruinedKeep, world, blockX, blockZ, 300, random);
+			runGenerator(this.orcHut, world, blockX, blockZ, 100, random);
+			runGenerator(this.dwarfForge, world, blockX, blockZ, 200, random);
+			runGenerator(this.inn, world, blockX, blockZ, 200, random);
+			runGenerator(this.tower, world, blockX, blockZ, 300, random);
+				break;
+		case 1:
 			break;
 		case -1:
 			break;
 		}
 	}
 	
-	private void generateStructure(WorldGenerator generator, World world, Random random, int chunkX, int chunkZ, int chance, Block topBlock, Class<?>...classes) {
-		ArrayList<Class<?>> classesList = new ArrayList<Class<?>>(Arrays.asList(classes));
-		
-		int x = (chunkX * 16) + random.nextInt(15);
-		int z = (chunkZ * 16) + random.nextInt(15);
-		int y = calculateGenerationHeight(world, x, z, topBlock);
-		BlockPos pos = new BlockPos(x, y, z);
-		
-		Class<?> biome = world.provider.getBiomeForCoords(pos).getClass();
-		
-		if(world.getWorldType() != WorldType.FLAT) {
-			if(classesList.contains(biome)) {
-				if (random.nextInt(chance) == 0) {
-					generator.generate(world, random, pos);
-				}
-			}
+	private void runGenerator(WorldGenStructure generator, World world, int blockX, int blockZ, int chance, Random random) {
+		if ((int) (Math.random() * chance) == 0) {
+			generator.generate(world, random, new BlockPos(blockX, WorldGenStructure.getGroundFromAbove(world, blockX, blockZ), blockZ));
 		}
 	}
+
 	
-	private static int calculateGenerationHeight(World world, int x, int z, Block blockTop) {
-		int y = world.getHeight();
-		boolean foundGround = false;
-		
-		while (!foundGround && y-- >= 0) {
-			Block block =  world.getBlockState(new BlockPos(x, y, z)).getBlock();
-			foundGround = block == blockTop;
-		}
-		
-		return y;
-		
-	}
 	
 }

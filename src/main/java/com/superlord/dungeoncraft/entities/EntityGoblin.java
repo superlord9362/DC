@@ -1,5 +1,7 @@
 package com.superlord.dungeoncraft.entities;
 
+import com.superlord.dungeoncraft.util.handlers.SoundsHandler;
+
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -16,6 +18,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -45,6 +49,7 @@ public class EntityGoblin extends EntityMob
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityCentaur.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityDwarf.class, true));
         }
         
         protected void applyEntityAttributes()
@@ -53,7 +58,22 @@ public class EntityGoblin extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(7.0D);
+        }
+        
+        protected SoundEvent getAmbientSound()
+        {
+            return SoundsHandler.GOBLIN_IDLE;
+        }
+
+        protected SoundEvent getHurtSound(DamageSource p_184601_1_)
+        {
+            return SoundsHandler.GOBLIN_HURT;
+        }
+
+        protected SoundEvent getDeathSound()
+        {
+            return SoundsHandler.GOBLIN_DEATH;
         }
         
         protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)

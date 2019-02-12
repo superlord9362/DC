@@ -23,10 +23,10 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntitySahuagin extends EntityMob
+public class EntityBullywug extends EntityMob
 {
 
-    public EntitySahuagin(World worldIn) {
+    public EntityBullywug(World worldIn) {
         super(worldIn);
         this.setSize(0.6F, 1.95F);
     }
@@ -56,27 +56,24 @@ public class EntitySahuagin extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(22.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(11.0D);
         }
         
         protected SoundEvent getAmbientSound()
         {
-            return SoundsHandler.SAHUAGIN_IDLE;
+            return SoundsHandler.BULLYWUG_ALL;
         }
 
         protected SoundEvent getHurtSound(DamageSource p_184601_1_)
         {
-            return SoundsHandler.SAHUAGIN_HURT;
+        	return SoundsHandler.BULLYWUG_ALL;
         }
 
         protected SoundEvent getDeathSound()
         {
-            return SoundsHandler.SAHUAGIN_DEATH;
+        	return SoundsHandler.BULLYWUG_ALL;
         }
         
-        protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
-        {
-            this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.GOLDEN_SWORD));
-        }
+      
  
 }
