@@ -1,0 +1,218 @@
+{
+    "mammoth_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:mammoth_idle",
+                "stream": true
+            }
+        ]
+    },
+   "mammoth_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:mammoth_hurt",
+                "stream": true
+            }
+        ]
+    },
+    "mammoth_death": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:mammoth_death",
+                "stream": true
+            }
+        ]
+    },
+    "orc_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:orc_idle",
+                "stream": true
+            }
+        ]
+    },
+   "orc_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:orc_hurt",
+                "stream": true
+            }
+        ]
+    },
+    "orc_death": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:orc_death",
+                "stream": true
+            }
+        ]
+    },
+    "kobold_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:kobold_idle",
+                "stream": true
+            }
+        ]
+    },
+   "kobold_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:kobold_hurt",
+                "stream": true
+            }
+        ]
+    },
+    "kobold_death": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:kobold_death",
+                "stream": true
+            }
+        ]
+    },
+    "goblin_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:goblin_idle",
+                "stream": true
+            }
+        ]
+    },
+   "goblin_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:goblin_hurt",
+                "stream": true
+            }
+        ]
+    },
+    "goblin_death": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:goblin_death",
+                "stream": true
+            }
+        ]
+    },
+    "sahuagin_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:sahuagin_idle",
+                "stream": true
+            }
+        ]
+    },
+   "sahuagin_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:sahuagin_hurt",
+                "stream": true
+            }
+        ]
+    },
+    "sahuagin_death": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:sahuagin_death",
+                "stream": true
+            }
+        ]
+    },
+    "axe_beak_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:axe_beak_idle",
+                "stream": true
+            }
+        ]
+    },
+   "axe_beak_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:axe_beak_hurt",
+                "stream": true
+            }
+        ]
+    },
+    "lamia_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:lamia_idle",
+                "stream": true
+            }
+        ]
+    },
+   "lamia_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:lamia_hurt",
+                "stream": true
+            }
+        ]
+    },
+    "ogre_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:ogre_idle",
+                "stream": true
+            }
+        ]
+    },
+   "ogre_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:ogre_hurt",
+                "stream": true
+            }
+        ]
+    },
+   "bullywug_all": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:bullywug_all",
+                "stream": true
+            }
+        ]
+    },
+    "gnoll_idle": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:gnoll_idle",
+                "stream": true
+            }
+        ]
+    },
+   "gnoll_hurt": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dc:gnoll_hurt",
+                "stream": true
+            }
+        ]
+    }
+}
