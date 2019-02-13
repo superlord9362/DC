@@ -1,0 +1,33 @@
+{
+
+  "type": "forge:ore_shaped",
+
+  "pattern": [
+
+    "X#"
+
+  ],
+
+  "key": {
+
+    "#": {
+
+      "item": "dc:fire_scroll"
+
+    },
+
+    "X": {
+
+      "item": "dc:staff"
+
+    }
+
+  },
+
+  "result": {
+
+    "item": "dc:staff_burning_hands"
+
+  }
+
+}

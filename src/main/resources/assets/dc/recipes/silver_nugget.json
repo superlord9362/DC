@@ -1,0 +1,28 @@
+{
+
+  "type": "forge:ore_shaped",
+
+  "pattern": [
+
+    "#"
+
+  ],
+
+  "key": {
+
+    "#": {
+
+      "item": "dc:silver_ingot"
+
+    }
+
+  },
+
+  "result": {
+
+    "item": "dc:silver_nugget",
+    "count": 9
+
+  }
+
+}

@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:beef"
+    },
+    "X": {
+      "item": "dc:salt"
+    }
+  },
+  "result": {
+    "item": "dc:beef_jerky"
+  }
+}

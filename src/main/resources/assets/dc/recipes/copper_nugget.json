@@ -1,0 +1,28 @@
+{
+
+  "type": "forge:ore_shaped",
+
+  "pattern": [
+
+    "#"
+
+  ],
+
+  "key": {
+
+    "#": {
+
+      "item": "dc:copper_ingot"
+
+    }
+
+  },
+
+  "result": {
+
+    "item": "dc:copper_nugget",
+    "count": 9
+
+  }
+
+}

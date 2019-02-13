@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "dc:silver_nugget"
+    }
+  },
+  "result": {
+    "item": "dc:silver_coin"
+  }
+}

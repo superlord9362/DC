@@ -1,0 +1,43 @@
+{
+
+  "type": "forge:ore_shaped",
+
+  "pattern": [
+
+    "  L",
+
+    " XI",
+
+    "X  "
+
+  ],
+
+  "key": {
+
+    "X": {
+
+      "item": "minecraft:stick"
+
+    },
+    
+    "L": {
+    
+        "item": "dc:chain"
+        
+    },
+    
+    "I": {
+    
+        "item": "minecraft:iron_ingot"
+
+    }
+
+  },
+
+  "result": {
+
+    "item": "dc:flail"
+
+  }
+
+}

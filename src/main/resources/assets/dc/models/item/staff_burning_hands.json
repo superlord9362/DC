@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "dc:items/iron_halberd"
+        "layer0": "dc:items/staff"
     },
     "display": {
         "thirdperson_righthand": {

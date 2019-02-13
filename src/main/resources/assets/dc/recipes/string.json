@@ -1,0 +1,28 @@
+{
+
+  "type": "forge:ore_shaped",
+
+  "pattern": [
+
+    "#"
+
+  ],
+
+  "key": {
+
+    "#": {
+
+      "item": "dc:horse_tail"
+
+    }
+
+  },
+
+  "result": {
+
+    "item": "minecraft:string",
+    "count": 3
+
+  }
+
+}
