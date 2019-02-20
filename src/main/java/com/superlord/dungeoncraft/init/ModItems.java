@@ -6,11 +6,13 @@ import java.util.List;
 import com.superlord.dungeoncraft.items.ItemBase;
 import com.superlord.dungeoncraft.items.ItemBucket;
 import com.superlord.dungeoncraft.items.ItemFireScroll;
+import com.superlord.dungeoncraft.items.ItemNineHells;
 import com.superlord.dungeoncraft.items.ItemUndeadScroll;
 import com.superlord.dungeoncraft.items.Shield;
 import com.superlord.dungeoncraft.items.Staff;
 import com.superlord.dungeoncraft.items.food.FoodBase;
 import com.superlord.dungeoncraft.items.tools.ToolSpear;
+import com.superlord.dungeoncraft.items.tools.ToolTwoHandedWeapon;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -41,6 +43,7 @@ public class ModItems {
 	public static final Item SILVER_INGOT = new ItemBase("silver_ingot");
 	public static final Item SILVER_NUGGET = new ItemBase("silver_nugget");
 	public static final Item MAMMOTH_HIDE = new ItemBase("mammoth_hide");
+	public static final Item NINE_SCROLL = new ItemNineHells("nine_scroll");
 	// public static final Item MOLTEN_COPPER = new ItemBase("molten_copper");
 	// public static final Item WOODEN_BUCKET = new ItemBucket(Blocks.AIR,
 	// "wooden_bucket");
@@ -54,10 +57,10 @@ public class ModItems {
 	public static final ToolMaterial MATERIAL_IRON_3 = EnumHelper.addToolMaterial("material_iron_3", 2, 250, 6.0F, 0.0F, 14);
 
 	// Tools
-	public static final ItemSword IRON_SPEAR = new ToolSpear("iron_spear", MATERIAL_IRON);
-	public static final ItemSword IRON_HALBERD = new ToolSpear("iron_halberd", MATERIAL_IRON_2);
+	public static final ItemSword IRON_SPEAR = new ToolTwoHandedWeapon("iron_spear", MATERIAL_IRON);
+	public static final ItemSword IRON_HALBERD = new ToolTwoHandedWeapon("iron_halberd", MATERIAL_IRON_2);
 	public static final ItemSword IRON_DAGGER = new ToolSpear("iron_dagger", MATERIAL_IRON_3);
-	public static final ItemSword QUARTERSTAFF = new ToolSpear("quarterstaff", MATERIAL_IRON_3);
+	public static final ItemSword QUARTERSTAFF = new ToolTwoHandedWeapon("quarterstaff", MATERIAL_IRON_3);
 	public static final ItemSword STAFF = new ToolSpear("staff", MATERIAL_IRON_3);
 	public static final Item STAFF_BURNING_HANDS = new Staff("staff_burning_hands", MATERIAL_IRON_3);
 	public static final ItemSword MACE = new ToolSpear("mace", MATERIAL_IRON);

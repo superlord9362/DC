@@ -25,6 +25,8 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 	private WorldGenStructure dwarfForge;
 	private WorldGenStructure inn;
 	private WorldGenStructure tower;
+	private WorldGenStructure grave;
+	private WorldGenStructure fort;
 	
 	public WorldGenCustomStructures() {
 		this.ruinedKeep = new WorldGenStructure("ruinedkeep");
@@ -32,6 +34,8 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 		this.dwarfForge = new WorldGenStructure("dwarf_forge");
 		this.inn = new WorldGenStructure("inn");
 		this.tower = new WorldGenStructure("tower");
+		this.grave = new WorldGenStructure("grave");
+		this.fort = new WorldGenStructure("fort");
 	}
 	
 	@Override
@@ -47,6 +51,8 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 			runGenerator(this.dwarfForge, world, blockX, blockZ, 200, random);
 			runGenerator(this.inn, world, blockX, blockZ, 200, random);
 			runGenerator(this.tower, world, blockX, blockZ, 300, random);
+			runGenerator(this.grave, world, blockX, blockZ, 200, random);
+			runGenerator(this.fort, world, blockX, blockZ, 500, random);
 				break;
 		case 1:
 			break;

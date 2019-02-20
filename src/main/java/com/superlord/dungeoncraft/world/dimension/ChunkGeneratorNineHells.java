@@ -46,7 +46,8 @@ import net.minecraft.world.gen.MapGenCavesHell;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 
 import net.minecraft.world.gen.feature.WorldGenHellLava;
-
+import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraftforge.event.ForgeEventFactory;
@@ -107,25 +108,25 @@ public class ChunkGeneratorNineHells implements IChunkGenerator
 
     
 
-    /* Any Structures you want - These are all of the Nether Ones
+    //Any Structures you want - These are all of the Nether Ones
 
-    private final WorldGenFire fireFeature = new WorldGenFire();
+    //private final WorldGenFire fireFeature = new WorldGenFire();
 
-    private final WorldGenGlowStone1 lightGemGen = new WorldGenGlowStone1();
+    //private final WorldGenGlowStone1 lightGemGen = new WorldGenGlowStone1();
 
-    private final WorldGenGlowStone2 hellPortalGen = new WorldGenGlowStone2();
+    //private final WorldGenGlowStone2 hellPortalGen = new WorldGenGlowStone2();
 
-    private final WorldGenerator quartzGen = new WorldGenMinable(Blocks.QUARTZ_ORE.getDefaultState(), 14, BlockMatcher.forBlock(Blocks.COPPER_BLOCK));
+    //private final WorldGenerator quartzGen = new WorldGenMinable(Blocks.QUARTZ_ORE.getDefaultState(), 14, BlockMatcher.forBlock(Blocks.COPPER_BLOCK));
 
-    private final WorldGenerator magmaGen = new WorldGenMinable(Blocks.MAGMA.getDefaultState(), 33, BlockMatcher.forBlock(Blocks.COPPER_BLOCK));
+    private final WorldGenerator magmaGen = new WorldGenMinable(Blocks.MAGMA.getDefaultState(), 33);
 
-    private final WorldGenBush brownMushroomFeature = new WorldGenBush(Blocks.BROWN_MUSHROOM);
+    //private final WorldGenBush brownMushroomFeature = new WorldGenBush(Blocks.BROWN_MUSHROOM);
 
-    private final WorldGenBush redMushroomFeature = new WorldGenBush(Blocks.RED_MUSHROOM);
+    //private final WorldGenBush redMushroomFeature = new WorldGenBush(Blocks.RED_MUSHROOM);
 
-    private MapGenNetherBridge genNetherBridge = new MapGenNetherBridge();
+    //private MapGenNetherBridge genNetherBridge = new MapGenNetherBridge();
 
-    */
+    
 
 
     private MapGenBase genNetherCaves = new MapGenCavesHell();
@@ -558,7 +559,7 @@ public class ChunkGeneratorNineHells implements IChunkGenerator
 
         {
 
-            abyte[i] = (byte)Biome.getIdForBiome(BiomeInit.AVERNUS);
+            abyte[i] = (byte)Biome.getIdForBiome(BiomeInit.ABYSS);
 
         }
 

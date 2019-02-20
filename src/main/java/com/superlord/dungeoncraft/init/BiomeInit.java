@@ -2,7 +2,7 @@ package com.superlord.dungeoncraft.init;
 
 import java.util.Optional;
 
-import com.superlord.dungeoncraft.world.biome.BiomeAvernus;
+import com.superlord.dungeoncraft.world.biome.BiomeAbyss;
 import com.superlord.dungeoncraft.world.biome.BiomeMarsh;
 
 import net.minecraft.world.biome.Biome;
@@ -17,11 +17,11 @@ public class BiomeInit {
 
 	
 	public static final Biome MARSH = new BiomeMarsh();
-	public static final Biome AVERNUS = new BiomeAvernus();
+	public static final Biome ABYSS = new BiomeAbyss();
 	
 	public static void registerBiomes() {
 		initBiome(MARSH, "Marsh", BiomeType.COOL, Type.SWAMP, Type.WET);
-		initBiome(AVERNUS, "Avernus", BiomeType.WARM, Type.SPOOKY, Type.DEAD);
+		initBiome(ABYSS, "Abyss", BiomeType.WARM, Type.SPOOKY, Type.DEAD);
 	}
 	
 	private static Biome initBiome(Biome biome, String name, BiomeType biomeType, Type... types) {
