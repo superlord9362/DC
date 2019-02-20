@@ -59,6 +59,8 @@ public class EntityGnoll extends EntityMob
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityGuardV.class, true));
+
         }
         
         protected SoundEvent getAmbientSound()

@@ -50,6 +50,7 @@ public class EntityGoblin extends EntityMob
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityCentaur.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityDwarf.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityGuardV.class, true));
         }
         
         protected void applyEntityAttributes()

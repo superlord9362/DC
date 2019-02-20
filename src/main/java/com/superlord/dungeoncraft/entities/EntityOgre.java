@@ -50,6 +50,8 @@ public class EntityOgre extends EntityMob
             this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityDwarf.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityGuardV.class, true));
+
 
         }
         

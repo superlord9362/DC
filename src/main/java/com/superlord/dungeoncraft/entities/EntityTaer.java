@@ -1,6 +1,7 @@
 package com.superlord.dungeoncraft.entities;
 
 import com.superlord.dungeoncraft.init.ModItems;
+import com.superlord.dungeoncraft.util.handlers.SoundsHandler;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
@@ -16,7 +17,6 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -24,12 +24,12 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntityCentaur extends EntityMob
+public class EntityTaer extends EntityMob
 {
 
-    public EntityCentaur(World worldIn) {
+    public EntityTaer(World worldIn) {
         super(worldIn);
-        this.setSize(1.3F, 2.55F);
+        this.setSize(1.3F, 2.25F);
     }
 
      protected void initEntityAI()
@@ -45,8 +45,12 @@ public class EntityCentaur extends EntityMob
 
         protected void applyEntityAI()
         {
-            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityGoblin.class, true));
-            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityAxeBeak.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+            this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
+            this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityGuardV.class, true));
+
         }
         
         protected void applyEntityAttributes()
@@ -54,32 +58,23 @@ public class EntityCentaur extends EntityMob
             super.applyEntityAttributes();
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
-            this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(45.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(40.0D);
         }
         
         protected SoundEvent getAmbientSound()
         {
-            super.getAmbientSound();
-            return SoundEvents.ENTITY_HORSE_AMBIENT;
-        }
-
-        protected SoundEvent getDeathSound()
-        {
-            super.getDeathSound();
-            return SoundEvents.ENTITY_HORSE_DEATH;
+            return SoundsHandler.KOBOLD_IDLE;
         }
 
         protected SoundEvent getHurtSound(DamageSource p_184601_1_)
         {
-            super.getHurtSound(p_184601_1_);
-            return SoundEvents.ENTITY_HORSE_HURT;
+            return SoundsHandler.KOBOLD_HURT;
         }
 
-        
-        protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
+        protected SoundEvent getDeathSound()
         {
-            this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_SPEAR));
+            return SoundsHandler.KOBOLD_DEATH;
         }
- 
+        
 }

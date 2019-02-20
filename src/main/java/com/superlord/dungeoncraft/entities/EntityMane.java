@@ -1,7 +1,9 @@
 package com.superlord.dungeoncraft.entities;
 
 import com.superlord.dungeoncraft.init.ModItems;
+import com.superlord.dungeoncraft.util.handlers.SoundsHandler;
 
+import net.minecraft.client.audio.Sound;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -24,12 +26,12 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntityCentaur extends EntityMob
+public class EntityMane extends EntityMob
 {
 
-    public EntityCentaur(World worldIn) {
+    public EntityMane(World worldIn) {
         super(worldIn);
-        this.setSize(1.3F, 2.55F);
+        this.setSize(0.6F, 0.95F);
     }
 
      protected void initEntityAI()
@@ -45,8 +47,13 @@ public class EntityCentaur extends EntityMob
 
         protected void applyEntityAI()
         {
-            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityGoblin.class, true));
-            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityAxeBeak.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+            this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
+            this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFriendlySkeleton.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityBarbedDevil.class, true));
+            this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityGuardV.class, true));
+
         }
         
         protected void applyEntityAttributes()
@@ -55,31 +62,32 @@ public class EntityCentaur extends EntityMob
             this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
             this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
             this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(45.0D);
+            this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(9.0D);
         }
         
         protected SoundEvent getAmbientSound()
         {
-            super.getAmbientSound();
-            return SoundEvents.ENTITY_HORSE_AMBIENT;
-        }
-
-        protected SoundEvent getDeathSound()
-        {
-            super.getDeathSound();
-            return SoundEvents.ENTITY_HORSE_DEATH;
+            return null;
         }
 
         protected SoundEvent getHurtSound(DamageSource p_184601_1_)
         {
-            super.getHurtSound(p_184601_1_);
-            return SoundEvents.ENTITY_HORSE_HURT;
+            return null;
         }
 
+        protected SoundEvent getDeathSound()
+        {
+            return null;
+        }
         
         protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
         {
             this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_SPEAR));
+        }
+        
+        @Override
+        public boolean isNonBoss() {
+        	return false;
         }
  
 }
