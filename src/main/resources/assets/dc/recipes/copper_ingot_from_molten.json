@@ -1,0 +1,33 @@
+{ 
+
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+
+    {
+
+      "item": "dc:molten_copper",
+
+      "data": 0
+
+    },
+
+    {
+
+      "item": "dc:wooden_water_bucket",
+
+      "data": 0
+
+    }
+
+  ],
+
+  "result": {
+
+    "item": "dc:copper_ingot",
+
+    "data": 0
+
+  }
+
+}
