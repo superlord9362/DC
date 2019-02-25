@@ -9,5 +9,7 @@ public class DCConfig {
 	
 	@Comment("The dimension IDs")
 	public static int abyssID = 2;
-
+	
+	@Comment("Advanced Smelting")
+	public static boolean advancedSmelting = true;
 }

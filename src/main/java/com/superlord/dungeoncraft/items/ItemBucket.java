@@ -50,7 +50,7 @@ public class ItemBucket extends Item implements IHasModel
     /**
      * Called when the equipped item is right clicked.
      */
-   /** public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
+   public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
         boolean flag = this.containedBlock == Blocks.AIR;
         ItemStack itemstack = playerIn.getHeldItem(handIn);
@@ -124,7 +124,6 @@ public class ItemBucket extends Item implements IHasModel
             }
         }
     }
-	**/
     private ItemStack fillBucket(ItemStack emptyBuckets, EntityPlayer player, Item fullBucket)
     {
         if (player.capabilities.isCreativeMode)

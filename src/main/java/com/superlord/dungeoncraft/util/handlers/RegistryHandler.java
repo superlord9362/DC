@@ -26,6 +26,8 @@ import com.superlord.dungeoncraft.entities.EntityTaer;
 import com.superlord.dungeoncraft.entities.EntityUridezu;
 import com.superlord.dungeoncraft.entities.EntityVampire;
 import com.superlord.dungeoncraft.entities.EntityVampireSpawn;
+import com.superlord.dungeoncraft.entities.EntityYuanTi;
+import com.superlord.dungeoncraft.entities.EntityYuanTiHalfblood;
 import com.superlord.dungeoncraft.init.BiomeInit;
 import com.superlord.dungeoncraft.init.ModBlocks;
 import com.superlord.dungeoncraft.init.ModItems;
@@ -119,6 +121,8 @@ public class RegistryHandler {
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "demogorgon"), EntityDemogorgon.class, "demogorgon", entityId++, Main.instance, 64, 3, true, 0xD38147, 0x000000);
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "barbeddevil"), EntityBarbedDevil.class, "barbeddevil", entityId++, Main.instance, 64, 3, true, 0x4A6800, 0x000000);
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "deer"), EntityDeer.class, "deer", entityId++, Main.instance, 64, 3, true, 0x4A6800, 0x000000);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "yuanti"), EntityYuanTi.class, "yuanti", entityId++, Main.instance, 64, 3, true, 0x0094FF, 0x000000);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "yuantihalf"), EntityYuanTiHalfblood.class, "yuantihalf", entityId++, Main.instance, 64, 3, true, 0x0094FF, 0x000000);
 }
 	
 }

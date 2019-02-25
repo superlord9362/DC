@@ -27,6 +27,8 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 	private WorldGenStructure tower;
 	private WorldGenStructure grave;
 	private WorldGenStructure fort;
+	private WorldGenStructure yuanTiTemple;
+	private WorldGenStructure vampireMansion;
 	
 	public WorldGenCustomStructures() {
 		this.ruinedKeep = new WorldGenStructure("ruinedkeep");
@@ -36,6 +38,8 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 		this.tower = new WorldGenStructure("tower");
 		this.grave = new WorldGenStructure("grave");
 		this.fort = new WorldGenStructure("fort");
+		this.yuanTiTemple = new WorldGenStructure("yuan_ti_temple");
+		this.vampireMansion = new WorldGenStructure("vampire_mansion");
 	}
 	
 	@Override
@@ -53,6 +57,8 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 			runGenerator(this.tower, world, blockX, blockZ, 300, random);
 			runGenerator(this.grave, world, blockX, blockZ, 200, random);
 			runGenerator(this.fort, world, blockX, blockZ, 500, random);
+			runGenerator(this.yuanTiTemple, world, blockX, blockZ, 750, random);
+			runGenerator(this.vampireMansion, world, blockX, blockZ, 1000, random);
 				break;
 		case 1:
 			break;

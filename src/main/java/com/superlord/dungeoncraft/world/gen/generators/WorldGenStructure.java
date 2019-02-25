@@ -363,6 +363,4 @@ public class WorldGenStructure extends WorldGenerator {
 
 	}
 
-
-
 }

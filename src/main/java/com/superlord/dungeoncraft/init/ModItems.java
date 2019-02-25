@@ -12,7 +12,6 @@ import com.superlord.dungeoncraft.items.Shield;
 import com.superlord.dungeoncraft.items.Staff;
 import com.superlord.dungeoncraft.items.food.FoodBase;
 import com.superlord.dungeoncraft.items.tools.ToolSpear;
-import com.superlord.dungeoncraft.items.tools.ToolTwoHandedWeapon;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -44,30 +43,30 @@ public class ModItems {
 	public static final Item SILVER_NUGGET = new ItemBase("silver_nugget");
 	public static final Item MAMMOTH_HIDE = new ItemBase("mammoth_hide");
 	public static final Item NINE_SCROLL = new ItemNineHells("nine_scroll");
-	// public static final Item MOLTEN_COPPER = new ItemBase("molten_copper");
-	// public static final Item WOODEN_BUCKET = new ItemBucket(Blocks.AIR,
-	// "wooden_bucket");
-	// public static final Item WOODEN_WATER_BUCKET = new
-	// ItemBucket(Blocks.FLOWING_WATER, "wooden_water_bucket");
-	// public static final Item SUMMON_UNDEAD = new
-	// ItemUndeadScroll("undead_scroll");
+	public static final Item MOLTEN_COPPER = new ItemBase("molten_copper");
+	public static final Item WOODEN_BUCKET = new ItemBucket(Blocks.AIR, "wooden_bucket");
+	public static final Item WOODEN_WATER_BUCKET = new ItemBucket(Blocks.FLOWING_WATER, "wooden_water_bucket");
+	//public static final Item SUMMON_UNDEAD = new ItemUndeadScroll("undead_scroll");
 	// Materials
-	public static final ToolMaterial MATERIAL_IRON = EnumHelper.addToolMaterial("material_iron", 2, 250, 6.0F, 1.0F, 14);
-	public static final ToolMaterial MATERIAL_IRON_2 = EnumHelper.addToolMaterial("material_iron_2", 2, 250, 6.0F, 3.0F, 14);
-	public static final ToolMaterial MATERIAL_IRON_3 = EnumHelper.addToolMaterial("material_iron_3", 2, 250, 6.0F, 0.0F, 14);
+	public static final ToolMaterial MATERIAL_IRON = EnumHelper.addToolMaterial("material_iron", 2, 250, 6.0F, 1.0F,
+			14);
+	public static final ToolMaterial MATERIAL_IRON_2 = EnumHelper.addToolMaterial("material_iron_2", 2, 250, 6.0F, 3.0F,
+			14);
+	public static final ToolMaterial MATERIAL_IRON_3 = EnumHelper.addToolMaterial("material_iron_3", 2, 250, 6.0F, 0.0F,
+			14);
 
 	// Tools
-	public static final ItemSword IRON_SPEAR = new ToolTwoHandedWeapon("iron_spear", MATERIAL_IRON);
-	public static final ItemSword IRON_HALBERD = new ToolTwoHandedWeapon("iron_halberd", MATERIAL_IRON_2);
+	public static final ItemSword IRON_SPEAR = new ToolSpear("iron_spear", MATERIAL_IRON);
+	public static final ItemSword IRON_HALBERD = new ToolSpear("iron_halberd", MATERIAL_IRON_2);
 	public static final ItemSword IRON_DAGGER = new ToolSpear("iron_dagger", MATERIAL_IRON_3);
-	public static final ItemSword QUARTERSTAFF = new ToolTwoHandedWeapon("quarterstaff", MATERIAL_IRON_3);
+	public static final ItemSword QUARTERSTAFF = new ToolSpear("quarterstaff", MATERIAL_IRON_3);
 	public static final ItemSword STAFF = new ToolSpear("staff", MATERIAL_IRON_3);
 	public static final Item STAFF_BURNING_HANDS = new Staff("staff_burning_hands", MATERIAL_IRON_3);
 	public static final ItemSword MACE = new ToolSpear("mace", MATERIAL_IRON);
 	public static final ItemSword FLAIL = new ToolSpear("flail", MATERIAL_IRON);
 	// public static final ItemShield SMALL_SHIELD = new Shield("small_shield");
-	
-	//Food
+
+	// Food
 	public static final Item MAMMOTH_SHANK = new FoodBase("mammoth_shank", 3, 2F, true);
 	public static final Item COOKED_MAMMOTH_SHANK = new FoodBase("cooked_mammoth_shank", 6, 12.8F, true);
 	public static final Item BEEF_JERKY = new FoodBase("beef_jerky", 6, 7.0F, true);
