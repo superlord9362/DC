@@ -523,7 +523,7 @@ public class EntityVampire extends EntityMob
         {
             EntityCreeper entitycreeper = (EntityCreeper)cause.getTrueSource();
 
-            if (entitycreeper.getPowered() && entitycreeper.isAIEnabled())
+            if (entitycreeper.getPowered() && entitycreeper.isAIDisabled())
             {
                 entitycreeper.incrementDroppedSkulls();
                 ItemStack itemstack = this.getSkullDrop();
