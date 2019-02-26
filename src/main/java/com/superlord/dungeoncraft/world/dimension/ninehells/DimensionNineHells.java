@@ -7,8 +7,6 @@ import com.superlord.dungeoncraft.world.dimension.ChunkGeneratorNineHells;
 
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.biome.BiomeProvider;
-import net.minecraft.world.biome.BiomeProviderSingle;
 import net.minecraft.world.gen.IChunkGenerator;
 
 public class DimensionNineHells extends WorldProvider {
