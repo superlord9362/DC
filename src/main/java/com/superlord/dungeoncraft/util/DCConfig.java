@@ -9,6 +9,9 @@ public class DCConfig {
 	
 	@Comment("The dimension IDs")
 	public static int abyssID = 2;
+
+	@Comment("The dimension ID for the Feywild")
+    public static int feywildID = 276;
 	
 	@Comment("Advanced Smelting")
 	public static boolean advancedSmelting = true;
